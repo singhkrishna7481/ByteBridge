@@ -71,33 +71,15 @@
   .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0;
   }
 
-  .logo-icon {
-    width: 38px;
-    height: 38px;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--navy);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-  }
-
-  .logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--white);
-  }
-
-  .logo-text span {
-    color: var(--gold);
+  /* SVG logo sizing — no box, just the bridge mark */
+  .logo-svg {
+    display: block;
+    width: 110px;
+    height: auto;
+    overflow: visible;
   }
 
   .status-badge {
@@ -598,8 +580,49 @@
   <!-- Header -->
   <header class="header fade-in">
     <div class="logo">
-      <div class="logo-icon">B</div>
-      <div class="logo-text">Byte<span>Bridge</span></div>
+      <!-- ByteBridge inline SVG logo — gold+white on dark bg -->
+      <svg class="logo-svg" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="ByteBridge Technologies">
+        <!-- Tower Left -->
+        <rect x="52" y="6" width="5" height="44" fill="#d4af37"/>
+        <!-- Tower Right -->
+        <rect x="143" y="6" width="5" height="44" fill="#d4af37"/>
+        <!-- Tower top circles -->
+        <circle cx="54.5" cy="4" r="5" fill="#d4af37"/>
+        <circle cx="145.5" cy="4" r="5" fill="#d4af37"/>
+        <!-- Main suspension cables -->
+        <path d="M54.5 6 Q54.5 30 100 38 Q145.5 30 145.5 6" stroke="white" stroke-width="2.2" fill="none" opacity="0.9"/>
+        <!-- Inner cables -->
+        <path d="M54.5 10 Q54.5 32 100 40 Q145.5 32 145.5 10" stroke="white" stroke-width="1.2" fill="none" opacity="0.45"/>
+        <!-- Road/deck -->
+        <rect x="30" y="50" width="140" height="4" rx="1" fill="white" opacity="0.8"/>
+        <!-- Binary text on deck -->
+        <text x="42" y="55" font-family="monospace" font-size="5" fill="#d4af37" opacity="0.85">01000010 01111001 01110100</text>
+        <!-- Pixel break effect (right side) -->
+        <rect x="130" y="42" width="3" height="3" fill="#d4af37" opacity="0.8"/>
+        <rect x="136" y="39" width="2" height="2" fill="#d4af37" opacity="0.6"/>
+        <rect x="141" y="36" width="2" height="2" fill="#d4af37" opacity="0.35"/>
+        <!-- Circuit traces left -->
+        <line x1="30" y1="52" x2="8" y2="52" stroke="#d4af37" stroke-width="1.5"/>
+        <line x1="8" y1="52" x2="8" y2="58" stroke="#d4af37" stroke-width="1.5"/>
+        <circle cx="8" cy="61" r="3" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+        <line x1="8" y1="46" x2="8" y2="52" stroke="#d4af37" stroke-width="1.5"/>
+        <circle cx="8" cy="44" r="3" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+        <!-- Circuit traces right -->
+        <line x1="170" y1="52" x2="192" y2="52" stroke="#d4af37" stroke-width="1.5"/>
+        <line x1="192" y1="52" x2="192" y2="58" stroke="#d4af37" stroke-width="1.5"/>
+        <circle cx="192" cy="61" r="3" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+        <line x1="192" y1="46" x2="192" y2="52" stroke="#d4af37" stroke-width="1.5"/>
+        <circle cx="192" cy="44" r="3" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+        <!-- Hanger cables -->
+        <line x1="72"  y1="22" x2="72"  y2="52" stroke="white" stroke-width="1" opacity="0.35"/>
+        <line x1="88"  y1="16" x2="88"  y2="52" stroke="white" stroke-width="1" opacity="0.35"/>
+        <line x1="100" y1="13" x2="100" y2="52" stroke="white" stroke-width="1" opacity="0.35"/>
+        <line x1="112" y1="16" x2="112" y2="52" stroke="white" stroke-width="1" opacity="0.35"/>
+        <line x1="126" y1="22" x2="126" y2="52" stroke="white" stroke-width="1" opacity="0.35"/>
+        <!-- Wordmark -->
+        <text x="208" y="38" font-family="'Playfair Display', Georgia, serif" font-size="22" font-weight="700" fill="white">ByteBridge</text>
+        <text x="208" y="56" font-family="'Inter', sans-serif" font-size="10" font-weight="500" fill="#d4af37" letter-spacing="3">TECHNOLOGIES</text>
+      </svg>
     </div>
     <div class="status-badge">
       <div class="status-dot"></div>
